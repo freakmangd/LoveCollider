@@ -48,7 +48,7 @@ function collider.newBox(x, y, width, height, tag, trigger, debugColor)
 	
 	function newBox.updatePos(newX, newY, center)
 		if center == nil then
-			center = true
+			center = false
 		end
 	
 		if center == true then
@@ -63,15 +63,6 @@ function collider.newBox(x, y, width, height, tag, trigger, debugColor)
 		newBox.superPoints.updatePoint(2, newBox.x + newBox.width, newBox.y + newBox.height)
 	end
 	
-	function newBox.setScale(wid, heit)
-		
-		heit = heit or wid
-		
-		newBox.width = wid
-		newBox.height = heit
-		
-	end
-	
 	function newBox.collidingWith(id) 
 		return newBox.collisions[id] ~= nil
 	end
@@ -80,6 +71,7 @@ function collider.newBox(x, y, width, height, tag, trigger, debugColor)
 		return newBox.ID
 	end
 	
+	-- NOT WORKING
 	function newBox.destroy()
 		for k,v in ipairs(collider.boxIDs) do
 			if v == newBox.ID then
@@ -133,6 +125,7 @@ function collider.newCircle(x, y, radius, tag, trigger, debugColor)
 		return newCircle.ID
 	end
 	
+	-- NOT WORKING
 	function newCircle.destroy()
 		for k,v in ipairs(collider.circleIDs) do
 			if v == newCircle.ID then
