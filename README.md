@@ -1,9 +1,9 @@
 # LoveCollider
 
-This library is a very light collider library.
+LoveCollider is a very light collider library.
 This can either be used just with triggers, or with physics collisions with the help of the transform.lua script
 
-You can read the documentation on the functions here:
+You can read the documentation on the functions here: https://github.com/Baggef/LoveCollider/blob/master/FUNCTIONS.md
 
 ## Installation
 
