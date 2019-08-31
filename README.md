@@ -2,12 +2,13 @@
 
 This library is a very light collider library.
 This can either be used just with triggers, or with physics collisions with the help of the transform.lua script
+
 You can read the documentation on the functions here:
 
 ## Installation
 
-After downloading, place collider.lua (and transform.lua optionally) into your folder with your main.lua
-If you put it in a different folder, be sure to reflect that in the following require lines
+After downloading, place collider.lua (and transform.lua optionally) into your folder with your main.lua. 
+If you put it in a different folder, be sure to reflect that in the following require lines.
 
 In your main.lua or wherever you put your requirements, write
 ```lua
@@ -15,7 +16,7 @@ collider = require('collider')
 -- If you installed transform.lua
 local transform = require('transform')
 ```
-transform.lua requires collider to be global, but if you dont need the physics side, you can set collider to local and leave out transform
+transform.lua requires collider to be global, but if you dont need the physics side, you can set collider to local and leave out transform.
 
 In your update function, add this
 ```lua
@@ -49,7 +50,7 @@ function myTrigger.onTriggerEnter(other)
   end
 end
 ```
-OnTriggerEnter is called on both colliders during an interaction, even if it's not a trigger
+OnTriggerEnter is called on both colliders during an interaction, even if it's not a trigger.
 There is also a onTriggerExit function that takes the same parameters and triggers when a collider has left the trigger
 
 If you want a more temporary trigger, you can use this function:
@@ -59,8 +60,8 @@ collisions = collider.overlapBox(100, 100, 200, 200)
 ```
 Where collider is the name of the table returned from require('collider')
 
-This returns all of the colliders that where inside of that box during that frame
-This can be used for hit detection and other instantanious checks
+This returns all of the colliders that where inside of that box during that frame. 
+This can be used for hit detection and other instantanious checks.
 
 Both of these functions have a circle variant.
 ```lua
@@ -70,15 +71,15 @@ collider.newCircle(100, 100, 10, 'tag', true)
 collider.overlapCircle(100, 100, 10)
 ```
 ### Physics
-The physics collisions (like running into a wall) are more tricky
+The physics collisions (like running into a wall) are more tricky.
 
-Currently, the circle colliders do not work with physics
+#### Currently, the circle colliders do not work with physics.
 
 If you wanted to make something like a wall, setting the trigger parameter to false will make one.
 But not so fast, if you want them to collide, you're going to need the transform.lua script.
-If you already have a transform.lua script, you can just take the Request() and Translate() functions and rework them to fit yours, it's pretty simple lua so don't worry
+If you already have a transform.lua script, you can just take the Request() and Translate() functions and rework them to fit yours, it's pretty simple lua so don't worry.
 
-The thing that is going to be colliding with the walls needs to move a certain way, and that is with the Request() function
+The thing that is going to be colliding with the walls needs to move a certain way, and that is with the Request() function. 
 Here is an example of a player I created to test this:
 
 ```lua
@@ -97,7 +98,7 @@ end
 ```
 Now dont worry about movement or any math before, just focus on Request() and updatePos()
 Request() takes your current movement incriments and your collider's ID and tests if that collider would be able to go there.
-updatePos() updates the position of the player's collider, the last parameter asks whether to use the center of the collider as the point to move
+updatePos() updates the position of the player's collider, the last parameter asks whether to use the center of the collider as the point to move.
 
 ### Debugging
 The colliders are invisible, if you would like to view the colliders in your game, simply run this code snippet:
@@ -106,8 +107,8 @@ function love.draw()
   collider.draw()
 end
 ```
-Where collider is the name of the table returned from require('collider')
-This will draw every collider in the game
+Where collider is the name of the table returned from require('collider'). 
+This will draw every collider in the game.
 
 You can set the color of the collider when drawn as the last parameter of newBox() or by setting
 ```lua
