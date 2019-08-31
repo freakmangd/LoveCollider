@@ -1,5 +1,13 @@
 # Functions
 
+```lua
+collider.newBox(x, y, width, height, tag, trigger, debugColor)
+collider.newCircle(x, y, radius, tag, trigger, debugColor)
+collider.overlapBox(x, y, width, height)
+collider.overlapCircle(x, y, radius)
+collider.draw()
+```
+
 ### Synopsis
 ```lua
 collider.newBox(x, y, width, height, tag, trigger, debugColor)
@@ -104,6 +112,19 @@ _Create a disposable collider for one frame, returns all collisions that collide
   
 ### Synopsis
 ```lua
+collider.update()
+```
+_Update all colliders_
+### Arguments
+
+None
+
+### Returns
+
+Nothing
+  
+### Synopsis
+```lua
 collider.draw()
 ```
 _Draw all colliders with their debug color_
@@ -114,3 +135,49 @@ None
 ### Returns
 
 Nothing
+
+### Synopsis
+```lua
+newCollider.updatePos(x, y, center)
+```
+_Update position of collider_
+### Arguments
+
+**number** x
+  _New x position of collider_
+**number** y
+  _New y position of collider_
+**boolean** center (false)
+  _Whether to use the center of the collider as the point to set instead of the top left corner_
+  
+### Returns
+
+Nothing
+
+### Synopsis
+```lua
+newCollider.collidingWith(id)
+```
+_Check whether a collider is colliding with or inside of another collider by their ID_
+### Arguments
+
+**string** id
+  _ID of other collider to check collision with, can be got with newCollider.ID or newCollider.getID()_
+  
+### Returns
+
+**boolean** isColliding
+  _Whether or not the collider is colliding with the other collider_
+
+### Synopsis
+```lua
+newCollider.getID()
+```
+### Arguments
+
+None
+
+### Returns
+
+**string** id
+  _ID of newCollider_
