@@ -1,20 +1,17 @@
 --Transform v0.1
 local transform = {}
 
-function transform.new(x, y, rotation, scale)
+function transform.new(newX, newY, rotation, scale)
 	
 	local newT = {}
 	
-	newT.position = {}
-	newT.position.x = x
-	newT.position.y = y
-	
+	newT.position = { x = newX, y = newY }	
 	newT.rotation = rotation or 0
 	newT.scale = scale or 1
 	
 	function newT.Translate(newx, newy)
 		
-		if type(newx) ~= 'number' then -- Number
+		if type(newx) ~= 'number' then -- Not a Number
 			if type(newx) == 'table' and newx.x == nil then -- Table
 				newy = newx[2]
 				newx = newx[1]
@@ -77,6 +74,10 @@ function transform.new(x, y, rotation, scale)
 		end
 
 		newT.Translate(newx * moveMult[1], newy * moveMult[2])
+	end
+	
+	function newT.get()
+		return newT.position.x, newT.position.y, newT.rotation, newT.scale
 	end
 	
 	return newT
