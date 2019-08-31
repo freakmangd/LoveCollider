@@ -6,6 +6,10 @@ collider.newCircle(x, y, radius, tag, trigger, debugColor)
 collider.overlapBox(x, y, width, height)
 collider.overlapCircle(x, y, radius)
 collider.draw()
+
+newCollider.updatePos(x, y, center)
+newCollider.collidingWith(id)
+newCollider.getID()
 ```
 
 ### Synopsis
