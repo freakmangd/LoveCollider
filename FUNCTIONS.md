@@ -149,8 +149,10 @@ _Update position of collider_
 
 **number** x  
   _New x position of collider_  
+  
 **number** y  
   _New y position of collider_  
+  
 **boolean** center (false)  
   _Whether to use the center of the collider as the point to set instead of the top left corner_  
   
