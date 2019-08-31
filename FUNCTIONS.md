@@ -147,11 +147,11 @@ newCollider.updatePos(x, y, center)
 _Update position of collider_
 ### Arguments
 
-**number** x
+**number** x  
   _New x position of collider_
-**number** y
+**number** y  
   _New y position of collider_
-**boolean** center (false)
+**boolean** center (false)  
   _Whether to use the center of the collider as the point to set instead of the top left corner_
   
 ### Returns
@@ -165,12 +165,12 @@ newCollider.collidingWith(id)
 _Check whether a collider is colliding with or inside of another collider by their ID_
 ### Arguments
 
-**string** id
+**string** id  
   _ID of other collider to check collision with, can be got with newCollider.ID or newCollider.getID()_
   
 ### Returns
 
-**boolean** isColliding
+**boolean** isColliding  
   _Whether or not the collider is colliding with the other collider_
 
 ### Synopsis
@@ -183,5 +183,5 @@ None
 
 ### Returns
 
-**string** id
+**string** id  
   _ID of newCollider_
